@@ -39,7 +39,7 @@ Windows的API都是由DLL中的函數來實現的,而所有win32的程式都會�
  
  所以從我的電腦上找到的位置就是像這樣
  
-![kernel32base]()
+![kernel32base](https://github.com/qqgnoe466263/shellcode/blob/master/windows7-x86/pic/ker_base.jpg)
 
 
 
