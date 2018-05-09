@@ -78,4 +78,8 @@ Windows的API都是由DLL中的函數來實現的,而所有win32的程式都會�
 
 ### Messegebox
 
+OS: windows7 x64 
+
+IDE: VS2015 Debug x86
+
 ![messagebox](https://github.com/qqgnoe466263/shellcode/blob/master/windows7-x86/pic/messagebox.jpg)
