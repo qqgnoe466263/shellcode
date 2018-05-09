@@ -64,7 +64,6 @@ int main()
 		//Load library user32.dll
 		xor ecx, ecx			
 		push 0x00006c6c		//ll
-		//mov byte ptr ss:[esp + 2], cl	//cl = ecx的低16bit     ,此行目的,只是為了要加入截斷字元
 		push 0x642e3233		//d.23
 		push 0x72657375		//resu
 		push esp
@@ -74,7 +73,6 @@ int main()
 		//Finding address of MessageBoxA()
 		xor ecx, ecx
 		push 0x0041786f					//Axo
-		//mov byte ptr ss:[esp + 3],cl
 		push 0x42656761					//Bega
 		push 0x7373654d					//sseM
 		push esp
@@ -105,7 +103,6 @@ int main()
 		//ExitProcess()
 		xor ecx, ecx
 		push 0x00737365					//sse   
-		//mov byte ptr ss:[esp + 3],cl
 		push 0x636f7250					//corP
 		push 0x74697845					//tixE
 		lea ecx, [esp]
