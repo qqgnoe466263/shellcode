@@ -6,3 +6,6 @@
 
 所以需要動態的去找到DLL載入的位置還有function的偏移大小。
 
+### 動態定位API
+
+Windows的API都是由DLL中的函數來實現的,而所有win32的程式都會先載入 **ntdll.dll** 跟 **kernel32.dll** 這兩個DLL
