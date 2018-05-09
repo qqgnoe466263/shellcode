@@ -8,4 +8,6 @@
 
 ### 動態定位API
 
-Windows的API都是由DLL中的函數來實現的,而所有win32的程式都會先載入 **ntdll.dll** 跟 **kernel32.dll** 這兩個DLL
+Windows的API都是由DLL中的函數來實現的,而所有win32的程式都會先載入 **ntdll.dll** 跟 **kernel32.dll** 這兩個DLL。
+
+所以思路就是先找到**kernel32.dll的地址** 跟 **GetProcAddress()** 這個function的地址,再利用GetProcAddress()就可以使用其他函數了。
