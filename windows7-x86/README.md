@@ -37,7 +37,7 @@ Windows的API都是由DLL中的函數來實現的,而所有win32的程式都會�
 		lodsd                 //Eax= module of InMemOrderModuleList (kernel32.dll)
 		mov ecx, [eax + 0x10] //kernel32 base address
  
- 所以從我的電腦上找到的位置就是像這樣
+ 所以從我的電腦上找到的位置就是像這樣,可以用ollydbg或其他的動態調試工具看一下
  
 ![kernel32base](https://github.com/qqgnoe466263/shellcode/blob/master/windows7-x86/pic/ker_base.jpg)
 
