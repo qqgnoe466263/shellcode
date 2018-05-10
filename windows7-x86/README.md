@@ -4,7 +4,7 @@
 
 > 這篇筆記,是基於參考下列所完成的筆記,詳細請參考以下網址
 + 1.https://www.exploit-db.com/exploits/39900/
-+ 2.https://www.exploit-db.com/google-hacking-database/
++ 2.https://www.exploit-db.com/exploits/40245/
 + 3.0day2
 
 ## 前言
