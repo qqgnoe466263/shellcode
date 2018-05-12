@@ -16,7 +16,7 @@ SEH(structured exception handling)中文叫**例外處理機制**,就是當proce
 
 ### 例外處理的攻擊原理
 
-SEH對每個user Thread,都有一個list來處理異常事件,該list的每個異常處理幀由兩個成員組成,分別是list的 **下一個例外處理機制的地址**、**當前異常處理函式的地址** 這邊用next、handler代表兩者,當例外發生的時候,OS會從 **FS:[0]** 也就是 TEB 找到例外處理函式的list,然後從頭開始,一個一個去呼叫例外處理函式,直到有人處裡為止。
+SEH對每個user Thread,都有一個list來處理異常事件,該list的每個異常處理結構由兩個成員組成,分別是list的 **下一個例外處理機制的地址**、**當前異常處理函式的地址** 這邊用next、handler代表兩者,當例外發生的時候,OS會從 **FS:[0]** 也就是 TEB 找到例外處理函式的list,然後從頭開始,一個一個去呼叫例外處理函式,直到有人處裡為止。
 
 參考至<a href="http://securityalley.blogspot.tw/2014/11/blog-post.html">緩衝區溢位攻擊：第五章 - 攻擊的變化</a>文中此圖
 ![SEH](https://github.com/qqgnoe466263/shellcode/blob/master/windows7-x86-SEH-Attack/pic/SEH.png)
