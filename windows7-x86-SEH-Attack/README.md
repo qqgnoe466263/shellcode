@@ -25,7 +25,7 @@ SEH對每個user Thread,都有一個list來處理異常事件,該list的每個�
 
 ### 實作
 
-使用範例也是參考<a href="http://securityalley.blogspot.tw/2014/11/blog-post.html">緩衝區溢位攻擊：第五章 - 攻擊的變化</a>只是我自己稍作了一些跟改,方便我自己實作,也配合自己的環境。
+使用範例也是參考<a href="http://securityalley.blogspot.tw/2014/11/blog-post.html">緩衝區溢位攻擊：第五章 - 攻擊的變化</a>只是我自己稍作了一些修改,方便我自己實作,也配合自己的環境。
 
     #include<stdio.h>
     #include<stdlib.h>
