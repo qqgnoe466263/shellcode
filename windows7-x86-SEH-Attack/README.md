@@ -21,8 +21,7 @@ SEH對每個user Thread,都有一個list來處理異常事件,該list的每個�
 參考至<a href="http://securityalley.blogspot.tw/2014/11/blog-post.html">緩衝區溢位攻擊：第五章 - 攻擊的變化</a>文中此圖
 ![SEH](https://github.com/qqgnoe466263/shellcode/blob/master/windows7-x86-SEH-Attack/pic/SEH.png)
 
-而思路就是,因為SEH是放在stack上的,所以可以利用overflow把SEH原本應該要去的**異常處裡函式**改成shellcode,
-原本overflow就是一種異常事件,所以windows在處理異常的時候,就會把shellcode當成異常處裡函式執行了。
+而思路就是,因為SEH是放在stack上的,所以可以利用overflow把SEH原本應該要去的**異常處裡函式**改成shellcode,所以當例外(overflow)發生的時候，這個記憶體位址會被載入到 EIP 上，而記憶體位址所指向的內容則會被執行,所以windows在處理異常的時候,就會把shellcode當成異常處裡函式執行了。
 
 ### 實作
 
@@ -63,6 +62,27 @@ SEH對每個user Thread,都有一個list來處理異常事件,該list的每個�
   
 To me continue....
 
+那exploit就依照文中的payload安排(總長度會依照電腦的不同而不一樣)
+
+![payload](https://github.com/qqgnoe466263/shellcode/blob/master/windows7-x86-SEH-Attack/pic/payload.png)
+
+當程式overflow之後,stack上面的SEH應該就已經被蓋過去了
+
+![1](https://github.com/qqgnoe466263/shellcode/blob/master/windows7-x86-SEH-Attack/pic/1.png)
+
+所以當function結束時,就會觸發SEH(畢竟overflow了)
+
+![2](https://github.com/qqgnoe466263/shellcode/blob/master/windows7-x86-SEH-Attack/pic/2.png)
+
+再來是重點 **在例外狀況剛發生完的那一刻，[ESP+8] 總會是 SEH 的 Next 成員的記憶體位址。**
+
+所以我們需要POP/POP/RET
+
+![3](https://github.com/qqgnoe466263/shellcode/blob/master/windows7-x86-SEH-Attack/pic/3-1.png)
+
+Get sh!!
+
+![4](https://github.com/qqgnoe466263/shellcode/blob/master/windows7-x86-SEH-Attack/pic/4.png)
 
 ### Messegebox
 
