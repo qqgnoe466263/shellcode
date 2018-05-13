@@ -32,7 +32,7 @@
     |---------offset---------|---------push esp;ret---------|---------any 4bytes---------|---------shellcode---------|
 
 
-這樣就可以用 **push esp;ret;** 跳進去esp執行shellcode的。
+這樣就可以用 **push esp;ret;** 跳進去esp執行shellcode。
 
 ### Messagebox
 
