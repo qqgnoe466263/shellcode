@@ -76,7 +76,7 @@ Windows的API都是由DLL中的函數來實現的,而所有win32的程式都會�
 
 有了GetProcAddress()這個function,就可以利用它執行其他的function!!
 
-### Messegebox
+### Messagebox
 
 OS: windows7 x64 
 
