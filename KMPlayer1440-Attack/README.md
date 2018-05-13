@@ -11,16 +11,26 @@
 
 ### 實作
 
-首先,先測試一下是否有Overflow直接跟文一樣灌10000個A給他
+首先,先測試一下是否有Overflow直接跟文中一樣灌10000個A給他
 
 ![kmp10000A](https://github.com/qqgnoe466263/shellcode/blob/master/KMPlayer1440-Attack/pic/kmp10000A.png)
 
+然後用mona找一下會蓋到return address的offset
 
-### Messegebox
+    !mona pattern_offset 61413561
 
-OS: windows7 x64 
+我的offset只有16
 
-IDE: VS2015 Debug x86 關閉DEP,ALSR
+![offset](https://github.com/qqgnoe466263/shellcode/blob/master/KMPlayer1440-Attack/pic/offset.png)
 
+剩下的就是把stack疊好,就可以成功攻擊了!!在疊的時候因為stack的位置跟文中說的一樣中間隔了4bytes所以要先任意塞4bytes進去。
+
+這樣就可以用 **push esp;ret;** 跳進去esp執行shellcode的。
+
+### Messagebox
+
+OS: windows7 x64 (關閉DEP)
+
+KMPlayer 3.1440 ver
 
 ![messagebox](https://github.com/qqgnoe466263/shellcode/blob/master/KMPlayer1440-Attack/pic/message.png)
