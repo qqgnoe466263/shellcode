@@ -23,7 +23,14 @@
 
 ![offset](https://github.com/qqgnoe466263/shellcode/blob/master/KMPlayer1440-Attack/pic/offset.png)
 
-剩下的就是把stack疊好,就可以成功攻擊了!!在疊的時候因為stack的位置跟文中說的一樣中間隔了4bytes所以要先任意塞4bytes進去。
+剩下的就是把stack疊好,就可以成功攻擊了!!在疊的時候因為stack的位置跟文中說的一樣EIP跟ESP隔了4bytes所以要先任意塞4bytes進去,在塞shellcode。
+
+    |---------offset---------|---------retAdd---------|---------any 4bytes---------|---------ESP---------|
+
+塞好大概是長這個樣子
+
+    |---------offset---------|---------push esp;ret---------|---------any 4bytes---------|---------shellcode---------|
+
 
 這樣就可以用 **push esp;ret;** 跳進去esp執行shellcode的。
 
